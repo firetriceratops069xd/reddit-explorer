@@ -8,6 +8,12 @@ import { useState } from 'react';
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
+  const filteredPosts = posts.filter((post) => {
+    return post.title.toLowerCase().includes(
+      searchTerm.toLowerCase()
+    );
+  });
+
   return (
     <div>
       <Header />
@@ -15,7 +21,7 @@ function App() {
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
       />
-      <Feed posts={posts} />
+      <Feed posts={filteredPosts} />
     </div>
   )
 }

@@ -9,8 +9,11 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredPosts = posts.filter((post) => {
-    return post.title.toLowerCase().includes(
-      searchTerm.toLowerCase()
+    return ( 
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.subreddit.toLowerCase().includes(searchTerm.toLowerCase()) 
     );
   });
 

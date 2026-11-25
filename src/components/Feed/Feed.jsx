@@ -4,9 +4,12 @@ import "./Feed.css";
 function Feed({ posts }) {
     return (
         <div className="feed">
-            {posts.map((post) => (
-                <PostCard key={post.id} post={post} />
-            ))}
+           {posts.length === 0 
+                ? "No posts found. Try another search." 
+                : posts.map((post) => (
+                    <PostCard key={post.id} post={post} />
+                ))
+            }
         </div>
     );
 }

@@ -1,0 +1,8 @@
+
+.feed {
+    width: 100%;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
